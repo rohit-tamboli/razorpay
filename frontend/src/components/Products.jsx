@@ -2,13 +2,16 @@ import React from "react";
 import "../styles/Products.css";
 
 const Products = ({ products }) => {
-  const checkoutHandler = async(amount) => {
+  const checkoutHandler = async (amount) => {
     console.log(amount);
-    
-  }
+  };
 
   return (
     <>
+      <h2></h2>
+      <h1 class="text-3xl font-bold text-center my-4">
+    Products
+  </h1>
       <div className="products-container">
         {products.map((item) => (
           <div className="product-card" key={item.id}>
@@ -17,7 +20,12 @@ const Products = ({ products }) => {
             <p className="product-price">
               Price <strong>{item.price} /-</strong>
             </p>
-            <button onClick={()=>checkoutHandler(item.price)} className="pay-button">Pay {item.price} /-</button>
+            <button
+              onClick={() => checkoutHandler(item.price)}
+              className="pay-button"
+            >
+              Pay {item.price} /-
+            </button>
           </div>
         ))}
       </div>
